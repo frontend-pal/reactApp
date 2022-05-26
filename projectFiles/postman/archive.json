@@ -1,0 +1,8 @@
+{
+  "environment": {
+    "meli-collection": true
+  },
+  "collection": {
+    "meli-env": true
+  }
+}
