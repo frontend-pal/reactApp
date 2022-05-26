@@ -1,0 +1,16 @@
+{
+    "id": "f4fc50fb-808b-4230-955e-997b505e2922",
+    "name": "MELI",
+    "values": [
+        {
+            "key": " API_URL ",
+            "value": "https://api.mercadolibre.com",
+            "enabled": true
+        },
+        {
+            "key": " SITE_ID ",
+            "value": "MLA",
+            "enabled": true
+        }
+    ]
+}

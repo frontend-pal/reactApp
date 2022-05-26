@@ -1,0 +1,83 @@
+{
+    "info": {
+        "_postman_id": "681bd2be-60c8-4c69-92dc-e555bc7c1c60",
+        "name": "MercadolibreTest",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "getItems",
+            "id": "d1e3979c-8cbe-424f-9cf6-02d30a2537ef",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{ API_URL }}/sites/{{ SITE_ID }}/search?q=iphone",
+                    "host": [
+                        "{{ API_URL }}"
+                    ],
+                    "path": [
+                        "sites",
+                        "{{ SITE_ID }}",
+                        "search"
+                    ],
+                    "query": [
+                        {
+                            "key": "q",
+                            "value": "iphone"
+                        }
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "getItemByID",
+            "id": "c8520260-4744-4916-a45c-69f27e43902d",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{ API_URL }}/items/MLA825580084",
+                    "host": [
+                        "{{ API_URL }}"
+                    ],
+                    "path": [
+                        "items",
+                        "MLA825580084"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "getDescriptionByID",
+            "id": "7db9741f-bb15-42ae-ae30-bdd33ef9cf28",
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{ API_URL }}/items/MLA825580084/description",
+                    "host": [
+                        "{{ API_URL }}"
+                    ],
+                    "path": [
+                        "items",
+                        "MLA825580084",
+                        "description"
+                    ]
+                }
+            },
+            "response": []
+        }
+    ]
+}
