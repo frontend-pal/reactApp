@@ -1,10 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Spinkit, SpinnerVisibilityService } from 'ng-http-loader';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  templateUrl: './app.component.html'
 })
-export class AppComponent {
-  title = 'angularApp';
+export class AppComponent implements OnInit {
+  public spinkit = Spinkit;
+
+  constructor(
+    public spinner: SpinnerVisibilityService
+  ) {
+
+  }
+
+  ngOnInit(): void {
+    console.log('entyre al onint principal');
+    // this.spinner.show();
+  }
 }
