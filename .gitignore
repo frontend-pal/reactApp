@@ -1,0 +1,49 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# Compiled output
+angularApp/dist
+angularApp/tmp
+angularApp/out-tsc
+angularApp/bazel-out
+
+# Node
+angularApp/node_modules
+angularApp/npm-debug.log
+angularApp/yarn-error.log
+
+# IDEs and editors
+angularApp/.idea/
+angularApp/.project
+angularApp/.classpath
+angularApp/.c9/
+angularApp/*.launch
+angularApp/.settings/
+angularApp/*.sublime-workspace
+
+# Visual Studio Code
+angularApp/.vscode/*
+angularApp/.vscode/settings.json
+angularApp/.vscode/tasks.json
+angularApp/.vscode/launch.json
+angularApp/.vscode/extensions.json
+angularApp/.history/*
+
+# Miscellaneous
+angularApp/.angular/cache
+angularApp/.sass-cache/
+angularApp/connect.lock
+angularApp/coverage
+angularApp/libpeerconnection.log
+angularApp/testem.log
+angularApp/typings
+
+# System files
+angularApp/.DS_Store
+angularApp/Thumbs.db
+
+# Lock files
+angularApp/package.lock.json
+angularApp/yarn.lock
+angularApp/.vscode/extensions.json
+angularApp/.vscode/launch.json
+angularApp/.vscode/tasks.json
