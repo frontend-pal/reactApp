@@ -17,7 +17,8 @@ const routes: Routes = [
 @NgModule({
     declarations: [
         ListItemsComponent,
-        ProductDetailComponent
+        ProductDetailComponent,
+        HomeComponent
     ],
     imports: [
         CommonModule,
@@ -25,6 +26,7 @@ const routes: Routes = [
         RouterModule.forChild(routes)
     ],
     exports: [
+        CommonModule,
         RouterModule
     ],
     providers: [

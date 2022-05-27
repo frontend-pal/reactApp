@@ -1,0 +1,30 @@
+<div class="full-width">
+    <div class="container mt-1 ml-1 mr-1">
+
+        <div  *ngIf="!noResults; else elseBlock" class="no-results">
+            <img src="assets/images/start-search.svg" alt="no-results" class="anyresults">
+            <h2>
+                Empiece su busqueda
+            </h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur possimus consectetur quo, illo
+                reiciendis ut quas, obcaecati molestias, debitis minus enim necessitatibus praesentium in vel incidunt
+                dolores deleniti blanditiis unde.
+            </p>
+        </div>
+        <ng-template #elseBlock>
+        <div class="no-results">
+            <img src="assets/images/no-results.svg" alt="no-results" class="anyresults">
+            <h2>
+                Sin resultados
+            </h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur possimus consectetur quo, illo
+                reiciendis ut quas, obcaecati molestias, debitis minus enim necessitatibus praesentium in vel incidunt
+                dolores deleniti blanditiis unde.
+
+            </p>
+        </div>
+    </ng-template>
+    </div>
+</div>

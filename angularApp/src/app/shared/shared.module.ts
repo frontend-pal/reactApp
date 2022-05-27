@@ -14,6 +14,7 @@ import { RouterModule } from '@angular/router';
         RouterModule
     ],
     exports: [
+        ProductItemComponent,
         SearchBoxComponent,
         RouterModule
     ],

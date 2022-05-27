@@ -12,8 +12,7 @@
   transition: all ease-in-out 300ms; //300 como transicion suave
 
   &.light-gray {
-    background-color: $meli-lighter-gray;
-    color: $meli-white;
+    background-color: $meli-lighter-gray;    
   }
 
   &.blue {

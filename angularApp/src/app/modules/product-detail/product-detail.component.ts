@@ -20,12 +20,12 @@ export class ProductDetailComponent implements OnInit {
       console.log(this.id);
     })
 
-    // setTimeout(() => {
-    //   // this.goBack();
-    // }, 2000);
+    setTimeout(() => {
+      this.goBack();
+    }, 2000);
   }
 
   goBack() {
-    this.router.navigateByUrl('');
+    this.router.navigate(['/'], { queryParams: { searchResults: 'no-content' } });
   }
 }

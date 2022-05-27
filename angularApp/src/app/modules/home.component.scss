@@ -1,0 +1,25 @@
+.no-results {
+  padding: 4rem;
+  margin: 0 auto;
+  max-width: 580px;
+  opacity: .625;
+  text-align: center;
+  width: 80%;
+
+  img {
+    width: 40%;
+    height: auto;
+    max-width: 250px;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin: 1rem 0;
+  }
+
+  p {
+    font-size: 1rem;
+
+  }
+}

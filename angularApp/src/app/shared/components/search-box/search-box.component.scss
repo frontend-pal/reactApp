@@ -15,6 +15,7 @@
     width: 100%;
 
     .logo {
+      cursor: pointer;
       height: 42px;
 
       img {
@@ -43,10 +44,12 @@
         border-radius: 0;
         cursor: pointer;
         height: 100%;
+        min-width: unset;
+        padding: 0;
         position: absolute;
         right: 0;
         top: 0;
-        width: 46px;
+        width: 46px ;
 
         &:hover {
           background-color: $meli-lighter-gray;
