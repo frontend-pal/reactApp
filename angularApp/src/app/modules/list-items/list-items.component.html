@@ -19,12 +19,15 @@
     <!-- end temp - navbar -->
 
     <div class="container mt-1 ml-1 mr-1 meli-card no-padding">
-        
-        <product-item></product-item>
-        <product-item></product-item>
-        <product-item></product-item>
-        <product-item></product-item>
-        
+
+        <!-- <pre>
+            {{
+                results | json
+            }}
+        </pre> -->
+        <ng-container *ngFor="let item of results; let i = index;">
+            <product-item [item]="item"></product-item>
+        </ng-container>
         <!-- <app-pagination></app-pagination> -->
     </div>
 
