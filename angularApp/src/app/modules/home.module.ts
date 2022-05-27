@@ -3,17 +3,21 @@ import { ListItemsComponent } from './list-items/list-items.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { HomeComponent } from './home.component';
 
 const routes: Routes = [
+    { path: '', component: HomeComponent },
     { path: 'items', component: ListItemsComponent },
-    //   { path: 'faq', component: FaqComponent },
+    { path: 'items/:id', component: ProductDetailComponent },
     //   { path: 'otros', component: OtrosTramitesComponent },
-    { path: '', redirectTo: 'items', pathMatch: 'full' }
+    { path: '', redirectTo: '', pathMatch: 'full' }
 ];
 
 @NgModule({
     declarations: [
-        ListItemsComponent
+        ListItemsComponent,
+        ProductDetailComponent
     ],
     imports: [
         CommonModule,

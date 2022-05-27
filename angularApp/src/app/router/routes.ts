@@ -7,9 +7,9 @@ export const routes: Routes = [
         path: '',
         component: LayoutComponent,
         canActivate: [SessionAuthGuard],
-        children: [
-            { path: '', redirectTo: '', pathMatch: 'full' },
+        children: [            
             { path: '', loadChildren: () => import('../modules/home.module').then(m => m.HomeModule) },
+            { path: '', redirectTo: '', pathMatch: 'full' }
         ]
     },
 
