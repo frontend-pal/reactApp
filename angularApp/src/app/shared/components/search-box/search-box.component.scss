@@ -1,6 +1,57 @@
-@import '../../../../styles/theme/colors';
+@import "../../../../styles/theme/colors";
 
 .search-box-cotainer {
-    height: 60px;
-    background-color: $meli-light-yellow;
+  height: 60px;
+  background-color: $meli-light-yellow;
+  width: 100%;
+  padding: 0 1rem;
+
+  .inner-search-box {
+    width: 100%;
+    max-width: 1044px;
+    margin: 0 auto;
+    padding: 12px 0;
+    max-height: 100%;
+
+    .logo {
+      height: 42px;
+
+      img {
+        height: 100%;
+      }
+    }
+
+    .search-input-container {
+      height: 39px;
+      width: 100%;
+      position: relative;
+
+      .search-input {
+        border-radius: 2px;
+        border: $meli-light-gray solid 1px;
+        border-right: 0;
+        height: 100%;
+        padding: 0 1rem;
+
+        width: 100%;
+      }
+
+      .btn-search {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 46px;
+        background-color: $meli-white;
+        border-radius: 0;
+        border: $meli-light-gray solid 1px;
+        border-left: 0;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $meli-lighter-gray;
+        }
+      }
+    }
+  }
 }

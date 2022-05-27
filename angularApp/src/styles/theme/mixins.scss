@@ -1,0 +1,14 @@
+$max: 5;
+$offset: 1;
+$unit: "rem"; // Feel free to change the unit.
+@mixin m-loop($className, $styleName) {
+  $i: 1;
+  @while $i <= $max {
+    #{$className + $i} {
+      #{$styleName}: #{$i + $unit};
+    }
+    $i: $i + $offset;
+  }
+}
+
+@include m-loop('.mr-', 'margin-right');
