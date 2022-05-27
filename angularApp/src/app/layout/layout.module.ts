@@ -3,6 +3,7 @@ import { FooterComponent } from './footer/footer.component';
 import { LayoutComponent } from './layout.component';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
     declarations: [
@@ -11,7 +12,8 @@ import { RouterModule } from '@angular/router';
     ],
     imports: [
         CommonModule,
-        RouterModule
+        RouterModule,
+        SharedModule
     ],
     exports: [
         FooterComponent,

@@ -13,4 +13,6 @@ $unit: "rem"; // Feel free to change the unit.
 
 @include meli-loop('.ml-', 'margin-left');
 @include meli-loop('.mr-', 'margin-right');
+@include meli-loop('.mt-', 'margin-top');
+@include meli-loop('.mb-', 'margin-bottom');
 @include meli-loop('.p-', 'padding');

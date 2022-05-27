@@ -20,9 +20,9 @@ export class ProductDetailComponent implements OnInit {
       console.log(this.id);
     })
 
-    setTimeout(() => {
-      this.goBack();
-    }, 2000);
+    // setTimeout(() => {
+    //   // this.goBack();
+    // }, 2000);
   }
 
   goBack() {
