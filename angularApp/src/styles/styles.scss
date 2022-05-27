@@ -1,12 +1,14 @@
-@import 'theme/colors', 'theme/fonts', 'theme/mixins', 'theme/buttons', 'theme/utils';
+@import "theme/colors", "theme/fonts", "theme/mixins", "theme/buttons";
 
 html {
   box-sizing: border-box;
 }
 
+@import "theme/utils";
+
 html * {
   box-sizing: border-box;
-  font-size: 14px;
+  font-size: 16px;
 
   &::before,
   &::after {
@@ -15,10 +17,11 @@ html * {
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   height: 100%;
   margin: 0;
   user-select: none;
+  overflow-x: hidden;
 }
 
 body a,
@@ -26,4 +29,31 @@ body label,
 body p {
   font-family: inherit;
   user-select: all;
+}
+
+// global app
+
+.router-wrapper {
+  min-height: calc(100vh - 42px);
+}
+
+// temp footer styles
+.footer {
+  height: 42px !important;
+  background-color: $meli-lighter-gray;
+  overflow: hidden;
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .logo-footer {
+      height: 42px;
+
+      img {
+        height: 100%;
+      }
+    }
+  }
 }
