@@ -5,8 +5,8 @@
             <img src="assets/favicon.svg" alt="search what you want">
         </div>
         <div class="search-input-container flex-center">
-            <input type="text" class="search-input">
-            <button class="btn btn-search light-gray">
+            <input type="text" class="search-input" #search (keyup.enter)="emitSearch(search.value)">
+            <button class="btn btn-search light-gray" (click)="emitSearch(search.value)">
                 <i class="fi fi-search"></i>
             </button>
         </div>

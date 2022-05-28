@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { ProductDescription } from '../../models/product-description';
+import { ProductDetail } from '../../models/product-detail';
 import { SearchResponse } from "../../models/search-response";
 
 @Injectable({
@@ -15,10 +17,8 @@ export class ApiMercadolibreService {
     private http: HttpClient
   ) { }
 
-  searchItems(search: string) {
-    const query = encodeURI(search);
-
-    return this.http.get<SearchResponse>(`${this.mainUrl}/sites/${this.siteId}/search?q=${query}`);
+  getItems(search: string) {
+    return this.http.get<SearchResponse>(`${this.mainUrl}/sites/${this.siteId}/search?q=${search}`);
       // .pipe(
       //   map(({ results }) => {
       //     console.log(results);
@@ -37,5 +37,13 @@ export class ApiMercadolibreService {
       //   }
       //   ));
     // return query;
+  }
+
+  getItemDetails(itemId: string) {
+    return this.http.get<ProductDetail>(`${this.mainUrl}/items/${itemId}`);
+  }
+
+  getItemDescription(itemId: string) {
+    return this.http.get<ProductDescription>(`${this.mainUrl}/items/${itemId}/description`);
   }
 }

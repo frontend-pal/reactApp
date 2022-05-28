@@ -20,8 +20,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.route.queryParams.subscribe((params: Params) => {
       this.noResults = params['searchResults'] === 'no-content';
-    })
-    // this.getSearchItem()
+    });
   }
 
 }

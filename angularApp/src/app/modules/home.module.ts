@@ -9,9 +9,9 @@ import { HomeComponent } from './home.component';
 const routes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'items', component: ListItemsComponent },
-    { path: 'items/:id', component: ProductDetailComponent },
-    //   { path: 'otros', component: OtrosTramitesComponent },
-    { path: '', redirectTo: '', pathMatch: 'full' }
+    { path: 'items/:id', component: ProductDetailComponent },    
+    { path: '', redirectTo: '', pathMatch: 'full' },
+    { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 
 @NgModule({

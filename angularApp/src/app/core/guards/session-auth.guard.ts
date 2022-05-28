@@ -9,7 +9,6 @@ export class SessionAuthGuard implements CanActivate {
     constructor(private router: Router) { }
 
     canActivate() {
-        console.log("entra al session guard");
         return true;
     }
 }

@@ -33,20 +33,56 @@
     display: flex;
     flex: 0 0 70%;
     height: 60vw;
+    justify-content: center;
     max-height: 733.6px;
     max-width: 733.6px; // 733.6+314.4 = 1048 container max width
     overflow: hidden;
-    justify-content: center;
+    position: relative;
     width: 60vw;
-    
+
+    .btn-nav {
+      align-items: center;
+      background-color: transparent;
+      cursor: pointer;
+      display: flex;
+      height: 100%;
+      position: absolute;
+      transition: all ease-in-out 300ms;
+      width: 2.5rem;
+      opacity: 0;
+
+      &.back {
+        left: 0;
+      }
+
+      &.next {
+        right: 0;
+      }
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.25);
+      }
+
+      i {
+        font-size: 2.75rem;
+        color: $meli-blue;
+        opacity: .75;
+      }
+    }
+
     img {
       height: 100%;
       width: auto;
     }
+
+    &:hover {
+      .btn-nav {
+        opacity: 1;
+      }
+    }
   }
 
   .summary-section {
-    background-color: $meli-test; //test color
     margin: 0 1rem;
     max-width: 314.4px; // 733.6+314.4 = 1048 container max width
     width: 40%;
@@ -63,7 +99,7 @@
       }
 
       span {
-        font-size: 3.125rem;
+        font-size: 2.125rem; // se redujo el tamaño por que no cabia la cifra
         font-weight: 400;
         margin-right: 10px;
       }
@@ -93,7 +129,6 @@
   }
 
   .other-info-section {
-    background-color: $meli-test; //test color
     margin-left: auto;
 
     p {
@@ -106,7 +141,6 @@
   padding: 1rem 2rem 1rem 1rem;
 
   .summary-container {
-    background-color: $meli-test; //test color
     border-radius: 4px;
     flex: 0 0 70%;
     max-width: 733.6px; // 733.6+314.4 = 1048 container max width
