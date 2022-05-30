@@ -1,3 +1,8 @@
+/**
+ * Este archivo fue creado usando el servicio gratuito
+ * para transformar json a modelo de typescript
+ * http://json2ts.com/
+ */
 export interface Snapshot {
     url: string;
     width: number;

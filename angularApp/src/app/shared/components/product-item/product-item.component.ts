@@ -14,7 +14,6 @@ export class ProductItemComponent implements OnInit {
 
   ngOnInit(): void {
     this.showComponent = this.item !== undefined;
-    console.log(this.item);
   }
 
   initComponent() {

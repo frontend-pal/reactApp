@@ -18,9 +18,9 @@ import { Paging } from 'src/app/core/models/search-response';
   styleUrls: ['./list-items.component.scss']
 })
 export class ListItemsComponent implements OnInit {
-  results: ProductList[] = [];
-  limit = 4; // items per page 
+  limit = 4; // items per page tomado de la documentacion oficial!
   paginationData!: Paging;
+  results: ProductList[] = [];
 
   constructor(
     private meliService: ApiMercadolibreService,
@@ -28,10 +28,22 @@ export class ListItemsComponent implements OnInit {
     private router: Router
   ) { }
 
+    /**
+  * al iniciar por primera vez este componente
+  * realiza una busqueda 
+  */
   ngOnInit(): void {
     this.sendSearch();
   }
 
+  /**
+  * Este metodo realiza una busqueda por get
+  * ademas de esto formatea los resultados recibidos
+  * con el metodo map creamos un arreglo con la informacion relevante para
+  * cumplir con los ibjetivos de este challenge
+  * Cambiando el offset recibido desde el paginador
+  * @param {string} search parametro recibido desde el paginador
+  */
   searchItem(search: string) {
     const offset = this.paginationData?.offset || 0;
 
@@ -49,7 +61,6 @@ export class ListItemsComponent implements OnInit {
         }));
 
         this.paginationData = paging;
-        console.log(this.paginationData);
         return data;
       }))
       .subscribe(res => {
@@ -60,6 +71,10 @@ export class ListItemsComponent implements OnInit {
       });
   }
 
+  /**
+   * Este metodo actualiza la busqueda
+   * el valor de la busqueda se obtiene por la- url
+   */
   sendSearch() {
     this.route.queryParams.subscribe((params: Params) => {
       const search = params['search'];
@@ -68,12 +83,21 @@ export class ListItemsComponent implements OnInit {
     });
   }
 
+  /**
+  * Este metodo obtiene valores d la busqueda pero en paginas diferentes
+  * Cambiando el offset recibido desde el paginador
+  * El valor del paginationData se cambia de manera temporal pues este se actualiza
+  * despues de actualizar la busqueda
+  * @param {number} offset parametro recibido desde el paginador
+  */
   changePage(offset: number) {
-    console.log(offset);
     this.paginationData.offset = offset;
     this.sendSearch();
   }
 
+  /**
+   * Este metodo envia a no content del home
+   */
   goBack() {
     this.router.navigate(['/'], { queryParams: { searchResults: 'no-content' } });
   }

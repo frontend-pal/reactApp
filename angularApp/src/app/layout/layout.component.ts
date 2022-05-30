@@ -14,6 +14,11 @@ export class LayoutComponent implements OnInit {
         // void
     }
 
+    /**
+     * Este metodo se encarga de formatear la busqueda y pasarsela por url 
+     *  a el componente item list
+     * @param search Este parametro es el string del input
+     */
     sendSearch(search: string) {
         const query = encodeURI(search);
 

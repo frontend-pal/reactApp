@@ -17,6 +17,9 @@ export class HomeComponent implements OnInit {
     private meliService: ApiMercadolibreService
   ) { }
 
+  // no se pudo docuemtnar con jsDoc
+  // este metodo solo lee el parametro no content para mostrar
+  // la página no resultados
   ngOnInit(): void {
     this.route.queryParams.subscribe((params: Params) => {
       this.noResults = params['searchResults'] === 'no-content';

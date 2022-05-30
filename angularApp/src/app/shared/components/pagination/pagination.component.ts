@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
 import { Paging } from 'src/app/core/models/search-response';
 
 @Component({
@@ -6,7 +6,7 @@ import { Paging } from 'src/app/core/models/search-response';
   templateUrl: './pagination.component.html',
   styleUrls: ['./pagination.component.scss']
 })
-export class PaginationComponent implements OnInit, OnChanges {
+export class PaginationComponent implements OnChanges {
   @Input() paginationData!: Paging;
   @Output() offsetEmitter: EventEmitter<number> = new EventEmitter();
   currentPage: number = 0;
@@ -15,17 +15,16 @@ export class PaginationComponent implements OnInit, OnChanges {
 
   constructor() { }
 
-  ngOnInit(): void {
-    console.log(this.paginationData);
-  }
-
   ngOnChanges() {
-    console.log(this.paginationData);
     if (this.paginationData !== undefined) {
       this.updatePaging();
     }
   }
 
+  /**
+   * Este metodo actualiza los valores de la paginación
+   * seún la respuesta del paging mas actualizado.
+   */
   updatePaging() {
     this.totalItems = this.paginationData?.total;
     this.totalPages = Math.ceil(this.totalItems / this.paginationData?.limit);
@@ -37,13 +36,23 @@ export class PaginationComponent implements OnInit, OnChanges {
     }
   }
 
+  /**
+   * Este metodo emite el valor del offset
+   * si el valor actual es 0 emite 5
+   * si el valor es diferente emite el valor actual mas el limite
+   */
   nextOffset() {
-    const nextOffset = this.paginationData?.offset === 0 ? 5 : this.paginationData?.offset + 4;
+    const nextOffset = this.paginationData?.offset === 0 ? 5 : this.paginationData?.offset + this.paginationData.limit;
 
     this.offsetEmitter.emit(nextOffset);
   }
 
-  previouesOffset() {
+  /**
+   * Este metodo emite el valor del offset
+   * si el valor es menor al limite emite 0
+   * si el valor es mayor al limite emite el valor actual menos el valor del limite
+   */
+  previousOffset() {
     const nextOffset = this.paginationData?.offset <= this.paginationData.limit + 1 ? 0 : this.paginationData?.offset - 4;
 
     this.offsetEmitter.emit(nextOffset);

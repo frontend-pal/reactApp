@@ -22,6 +22,8 @@ export class ProductDetailComponent implements OnInit {
     private router: Router
   ) { }
 
+  // Captura el id de la url
+  // si este no existe envia a la pagina de home
   ngOnInit(): void {
     this.route.paramMap.subscribe((params: ParamMap) => {
       this.id = params.get('id');
@@ -33,44 +35,51 @@ export class ProductDetailComponent implements OnInit {
         this.goBack();
       }
     });
-
-    // setTimeout(() => {
-    //   this.goBack();
-    // }, 2000);
   }
 
+  /**
+   * Este metodo por get los detalles del item seleccionado
+   * si el valos es 0 o tenemos un error enviara atras como no content
+   * @param itemId El id del item actual seleccionado
+   */
   getDetails(itemId: string) {
     this.meliService.getItemDetails(itemId).subscribe(res => {
       this.productDetails = res;
       this.condition = this.productDetails.attributes.find(x => x.id === 'ITEM_CONDITION');
       this.pictures = this.productDetails.pictures && this.productDetails.pictures.length > 0 ? this.productDetails.pictures : [];
       this.currentPicture = this.pictures[0];
-      console.log(this.productDetails);
-      console.log(this.condition);
-      console.log(this.pictures);
     }, err => {
       console.log(err);
       this.goBack();
     })
   }
 
+  /**
+   * Este metodo obtiene por get la descripcion del item
+   *  y la formatea para verla en pantalla
+   * la descripcion del item seleccionado
+   */
   getDescription(itemId: string) {
     this.meliService.getItemDescription(itemId).subscribe(res => {
-      console.log(res);
       this.plainText = res.plain_text.replace(/(?:\r\n|\r|\n)/g, '<br>');
     })
   }
 
+  /**
+   * Este metodo envia a no content del home
+   */
   goBack() {
     this.router.navigate(['/'], { queryParams: { searchResults: 'no-content' } });
   }
 
+  /**
+   * Este metodo llama imagenes del arreglo de urls
+   * se usa para asemejar un carrusel basico
+   * @param direction Direccion del carousel
+   */
   getPicture(direction: string) {
     const currentIndex = this.pictures.findIndex(x => x.id === this.currentPicture?.id);
     const picturesLength = this.pictures.length - 1;
-
-    console.log(currentIndex);
-    console.log(picturesLength);
 
     if (direction === 'next') {
       if (currentIndex === picturesLength) {
@@ -85,9 +94,5 @@ export class ProductDetailComponent implements OnInit {
         this.currentPicture = this.pictures[currentIndex - 1];
       }
     }
-
-    setTimeout(() => {
-
-    }, 1000);
   }
 }
