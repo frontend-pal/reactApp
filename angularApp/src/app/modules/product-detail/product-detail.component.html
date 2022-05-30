@@ -1,0 +1,74 @@
+<div class="full-width">
+    <!-- start temp - navbar -->
+    <div class="meli-nav container">
+        <ul class="meli-nav-list">
+            <li class="list-item">
+                Electrónica Audio y Video : Pos
+            </li>
+            <li class="list-item">
+                Reproductores
+            </li>
+            <li class="list-item">
+                iPod / iPad
+            </li>
+            <li class="list-item">
+                32 GB
+            </li>
+        </ul>
+    </div>
+    <!-- end temp - navbar -->
+
+    <div class="container mt-1 ml-1 mr-1 meli-card no-padding">
+
+        <div class="product-detail">
+            <div class="product-section">
+                <!-- <img src="https://http2.mlstatic.com/D_NQ_NP_782725-MLA49423195235_032022-V.webp" alt="alt-test"> -->
+                <img [src]="currentPicture?.url">
+                <div class="btn-nav back" (click)="getPicture('back')" *ngIf="pictures.length > 1">
+                    <i class="fi fi-angle-left"></i>
+                </div>
+                <div class="btn-nav next" (click)="getPicture('next')" *ngIf="pictures.length > 1">
+                    <i class="fi fi-angle-right"></i>
+                </div>
+            </div>
+
+            <div class="summary-section">
+                <div class="status-section">
+                    <span>{{ condition?.value_name }}</span>
+                    <span> - {{ productDetails?.sold_quantity }} vendidos</span>
+                </div>
+                <div class="name-section">
+                    <p>
+                       {{ productDetails?.title }}
+                    </p>
+                </div>
+                <div class="price-section mb-2">
+                    <div class="price">
+                        <span>$</span>
+                        <span>{{ productDetails?.price | currency:' ':'symbol':'1.0-1' }}</span>
+                    </div>
+                </div>
+                <div class="button-section mt-2">
+                    <button class="btn blue w-100 p-1">
+                        Comprar
+                    </button>
+                </div>
+            </div>
+
+            <!-- <div class="other-info-section">
+                <p>
+                    Quedan 7 Und's
+                </p>
+            </div> -->
+        </div>
+
+        <div class="product-summary">
+            <div class="summary-container">
+                <h2 class="summary-title">Descripcion del producto</h2>
+                <p class="summary-product-description"
+                    [innerHTML]="plainText"></p>
+            </div>
+        </div>
+
+    </div>
+</div>

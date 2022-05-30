@@ -1,0 +1,41 @@
+@import "../../../styles/theme/colors.scss";
+
+.footer {
+  background-color: $meli-lighter-gray;
+  height: 78px;
+  overflow: hidden;
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .logo-footer {
+      height: 42px;
+
+      img {
+        height: 100%;
+      }
+    }
+  }
+
+  .nav-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    a {
+      margin: 0 1rem !important;
+      font-size: 0.75rem;
+    }
+  }
+
+  @media all and(min-width: 720px) {
+    height: 74px;
+    .nav-footer {
+      a {
+        font-size: 1rem;
+      }
+    }
+  }
+}

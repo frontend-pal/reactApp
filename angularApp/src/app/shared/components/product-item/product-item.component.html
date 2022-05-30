@@ -1,0 +1,31 @@
+<div class="product-item" *ngIf="showComponent">
+    <div class="product-section" routerLink="/items/{{item?.id}}">
+        <img [src]="item?.thumbnail" [alt]="item?.title">
+    </div>
+
+    <div class="summary-section">
+        <div class="price-section">
+            <div class="price">
+                <span>$</span>
+                <span>{{ item?.price | currency:' ':'symbol':'1.0-1' }}</span>
+            </div>
+            <div class="free-shipping" *ngIf="item?.shipping?.free_shipping">
+                <div class="available"></div>
+            </div>
+        </div>
+        <div class="name-section" routerLink="/items/{{item?.id}}">
+            <p>
+                {{ item?.title }}
+            </p>
+        </div>
+        <!-- <div class="description-info">
+            <p>maybe if we need</p>
+        </div> -->
+    </div>
+
+    <div class="other-info-section">
+        <p *ngIf="item?.available_quantity !== 0">
+            Quedan {{ item?.available_quantity }} {{ item?.available_quantity === 1 ? "Und" : "Und's"}}
+        </p>
+    </div>
+</div>

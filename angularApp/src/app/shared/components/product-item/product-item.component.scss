@@ -1,0 +1,74 @@
+@import '../../../../styles/theme/colors';
+
+.product-item {
+  border-bottom: solid #ebebeb 1px;
+  display: flex;
+  padding: 1rem 2rem 1rem 1rem;
+
+  .product-section {
+    align-items: center;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    height: 192px;
+    overflow: hidden;
+    width: 192px;
+
+    img {
+      height: 100%;
+      width: auto;
+    }
+  }
+
+  .summary-section {
+    margin: 1rem;
+    max-width: 440px;
+    width: 65%;
+
+    .price-section {      
+      > div {
+        display: inline-block;
+      }
+
+      span {
+        margin-right: 10px;
+        font-size: 24px;
+        font-weight: 500;
+      }
+
+      .free-shipping {
+        height: 30px;
+        width: 30px;
+
+        > div {
+          border-radius: 50%;
+          height: 18px;
+          margin: 12px 0;
+          width: 18px;
+        }
+
+        .available {
+          background-color: $meli-success;
+        }
+      }
+    }
+
+    .name-section {
+      cursor: pointer;
+
+      p {
+        font-size: 18px;
+        user-select: none;
+      }
+    }
+  }
+
+  .other-info-section {
+    margin-left: auto;
+
+    p {
+      font-size: 10px;
+    }
+  }
+}

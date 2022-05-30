@@ -1,0 +1,23 @@
+@import '../theme/colors.scss';
+
+.btn {
+  border-radius: .25rem;
+  border: 0;
+  background-color: $meli-white;
+  cursor: pointer;
+  font-size: 1.125rem;
+  font-weight: 400;
+  padding: 1rem;
+  min-width: 140px;
+  color: $meli-dark-gray;
+  transition: all ease-in-out 300ms; //300 como transicion suave
+
+  &.light-gray {
+    background-color: $meli-lighter-gray;    
+  }
+
+  &.blue {
+    background-color: $meli-blue;
+    color: $meli-white;
+  }
+}
