@@ -1,0 +1,15 @@
+<div class="pagination-container" *ngIf="paginationData !== undefined">
+    <div class="container m-1">
+        <button class="btn btn-back mr-1" *ngIf="currentPage !== 1" (click)="previousOffset()">
+            &lt; <span class="text">Anterior</span>
+        </button>
+        <div class="pages-container">
+            <span class="page mr-1">{{ currentPage }}</span>
+            <span class="mr-1">de</span>
+            <span class="mr-1">{{ totalItems }}</span>
+        </div>
+        <button class="btn btn-next mr-1" (click)="nextOffset()">
+            <span class="text">Siguiente</span> &gt;
+        </button>
+    </div>
+</div>

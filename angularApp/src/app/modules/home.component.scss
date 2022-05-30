@@ -1,0 +1,36 @@
+.no-results {
+  padding: 2rem;
+  margin: 0 auto;
+  max-width: 580px;
+  opacity: 0.625;
+  text-align: center;
+  width: 80%;
+
+  img {
+    width: 75%;
+    height: auto;
+    max-width: 250px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin: 1rem 0;
+  }
+
+  p {
+    font-size: 0.75rem;
+  }
+
+  @media all and(min-width: 992px) {
+    padding: 4rem;
+
+    h2 {
+      font-size: 2.5rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+@import "../../../styles/theme/colors.scss";
+
+// temp navbar
+.meli-nav {
+  padding-bottom: 16px;
+  padding-top: 16px;
+}
+
+.meli-nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0 0 0 -16px;
+  padding: 0;
+
+  .list-item {
+    font-size: 0.375rem;
+    margin-right: 1rem;
+    position: relative;
+
+    &:not(:last-child):after {
+      content: ">";
+      // margin: 0 0.5rem;
+    }
+
+    @media all and (min-width: 566px) {
+      font-size: 1rem;
+    }
+  }
+}

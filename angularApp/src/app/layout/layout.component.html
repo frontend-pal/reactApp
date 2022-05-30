@@ -1,0 +1,7 @@
+<div class="full-layout">
+    <div class="router-wrapper">
+        <app-search-box  (searchEmitter)="sendSearch($event)"></app-search-box>
+        <router-outlet></router-outlet>
+    </div>
+    <app-footer></app-footer>
+</div>

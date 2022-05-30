@@ -1,0 +1,60 @@
+@import "../../../../styles/theme/colors";
+
+.search-box-container {
+  background-color: $meli-light-yellow;
+  height: 60px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  width: 100%;
+
+  .inner-search-box {
+    margin: 0 auto;
+    max-height: 100%;
+    max-width: 1044px;
+    padding: 12px 0;
+    width: 100%;
+
+    .logo {
+      cursor: pointer;
+      height: 42px;
+
+      img {
+        height: 100%;
+      }
+    }
+
+    .search-input-container {
+      height: 39px;
+      position: relative;
+      width: 100%;
+
+      .search-input {
+        border: $meli-light-gray solid 1px;
+        border-radius: 2px;
+        border-right: 0;
+        height: 100%;
+        padding: 0 1rem;
+        width: 100%;
+      }
+
+      .btn-search {
+        background-color: $meli-white;
+        border: $meli-light-gray solid 1px;
+        border-left: 0;
+        border-radius: 0;
+        cursor: pointer;
+        height: 100%;
+        min-width: unset;
+        padding: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 46px ;
+
+        &:hover {
+          background-color: $meli-lighter-gray;
+        }
+      }
+    }
+  }
+}

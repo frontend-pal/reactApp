@@ -1,0 +1,183 @@
+@import "../../../styles/theme/colors.scss";
+
+// temp navbar
+.meli-nav {
+  padding-bottom: 16px;
+  padding-top: 16px;
+}
+
+.meli-nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0 0 0 -16px;
+  padding: 0;
+
+  .list-item {
+    margin-right: 1rem;
+    position: relative;
+
+    &:not(:last-child):after {
+      content: ">";
+      // margin: 0 0.5rem;
+    }
+  }
+}
+
+.product-detail {
+  display: flex;
+  padding: 1rem 2rem 1rem 1rem;
+
+  .product-section {
+    align-items: center;
+    border-radius: 4px;
+    display: flex;
+    flex: 0 0 70%;
+    height: 60vw;
+    justify-content: center;
+    max-height: 733.6px;
+    max-width: 733.6px; // 733.6+314.4 = 1048 container max width
+    overflow: hidden;
+    position: relative;
+    width: 60vw;
+
+    .btn-nav {
+      align-items: center;
+      background-color: transparent;
+      cursor: pointer;
+      display: flex;
+      height: 100%;
+      position: absolute;
+      transition: all ease-in-out 300ms;
+      width: 2.5rem;
+      opacity: 0;
+
+      &.back {
+        left: 0;
+      }
+
+      &.next {
+        right: 0;
+      }
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.25);
+      }
+
+      i {
+        font-size: 2.75rem;
+        color: $meli-blue;
+        opacity: 0.75;
+      }
+    }
+
+    img {
+      height: 100%;
+      width: auto;
+    }
+
+    &:hover {
+      .btn-nav {
+        opacity: 1;
+      }
+    }
+  }
+
+  .summary-section {
+    margin: 0 1rem;
+    max-width: 314.4px; // 733.6+314.4 = 1048 container max width
+    width: 40%;
+
+    .status-section {
+      span {
+        font-size: 14px;
+      }
+    }
+
+    .price-section {
+      > div {
+        display: inline-block;
+      }
+
+      span {
+        font-size: 2.125rem; // se redujo el tamaño por que no cabia la cifra
+        font-weight: 400;
+        margin-right: 10px;
+      }
+
+      .free-shipping {
+        height: 30px;
+        width: 30px;
+
+        > div {
+          border-radius: 50%;
+          height: 18px;
+          margin: 12px 0;
+          width: 18px;
+        }
+
+        .available {
+          background-color: $meli-success;
+        }
+      }
+    }
+
+    .name-section {
+      p {
+        font-size: 24px;
+      }
+    }
+  }
+
+  .other-info-section {
+    margin-left: auto;
+
+    p {
+      font-size: 10px;
+    }
+  }
+
+  @media all and (max-width: 640px) {
+    flex-direction: column;
+
+    .product-section {
+      width: 100%;
+    }
+
+    .summary-section {
+      max-width: 100%;
+      width: 100%;
+    }
+
+    .product-summary {
+      .summary-container {
+        max-width: unset;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.product-summary {
+  padding: 1rem 2rem 1rem 1rem;
+
+  .summary-container {
+    border-radius: 4px;
+    flex: 0 0 70%;
+    max-width: 733.6px; // 733.6+314.4 = 1048 container max width
+    overflow: hidden;
+    width: 60vw;
+
+    .summary-title {
+      font-size: 2rem;
+      font-weight: 400;
+      margin: 2rem;
+    }
+
+    .summary-product-description {
+      font-size: 1rem;
+      margin: 2rem;
+      line-height: 1.25;
+      text-align: left;
+    }
+  }
+}

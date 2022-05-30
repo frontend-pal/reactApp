@@ -1,0 +1,32 @@
+<div class="full-width">
+    <!-- start temp - navbar -->
+    <div class="meli-nav container">
+        <ul class="meli-nav-list">
+            <li class="list-item">
+                Electrónica Audio y Video : Pos
+            </li>
+            <li class="list-item">
+                Reproductores
+            </li>
+            <li class="list-item">
+                iPod / iPad
+            </li>
+            <li class="list-item">
+                32 GB
+            </li>
+        </ul>
+    </div>
+    <div class="container mt-1 ml-1 mr-1 meli-card no-padding">
+
+        <!-- <pre>
+            {{
+                results | json
+            }}
+        </pre> -->
+        <ng-container *ngFor="let item of results; let i = index;">
+            <product-item [item]="item"></product-item>
+        </ng-container>
+    </div>
+    <app-pagination [paginationData]="this.paginationData" (offsetEmitter)="changePage($event)"></app-pagination>
+
+</div>
