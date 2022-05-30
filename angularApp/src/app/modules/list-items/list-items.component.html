@@ -26,7 +26,7 @@
         <ng-container *ngFor="let item of results; let i = index;">
             <product-item [item]="item"></product-item>
         </ng-container>
-        <!-- <app-pagination></app-pagination> -->
     </div>
+    <app-pagination [paginationData]="this.paginationData" (offsetEmitter)="changePage($event)"></app-pagination>
 
 </div>

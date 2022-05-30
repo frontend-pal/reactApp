@@ -34,26 +34,9 @@ body p {
 // global app
 
 .router-wrapper {
-  min-height: calc(100vh - 74px);
-}
+  min-height: calc(100vh - 78px);
 
-// temp footer styles
-.footer {
-  height: auto !important;
-  background-color: $meli-lighter-gray;
-  overflow: hidden;
-
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    .logo-footer {
-      height: 42px;
-
-      img {
-        height: 100%;
-      }
-    }
+  @media all and(min-width: 720px) {
+    min-height: calc(100vh - 74px);
   }
 }

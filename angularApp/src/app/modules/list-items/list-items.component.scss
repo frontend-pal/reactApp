@@ -13,6 +13,7 @@
   padding: 0;
 
   .list-item {
+    font-size: 0.375rem;
     margin-right: 1rem;
     position: relative;
 
@@ -20,10 +21,9 @@
       content: ">";
       // margin: 0 0.5rem;
     }
+
+    @media all and (min-width: 566px) {
+      font-size: 1rem;
+    }
   }
 }
-
-.full-width {
-  // background-color: blue;
-}
-

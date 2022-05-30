@@ -8,7 +8,6 @@ import { ProductList } from 'src/app/core/models/product-list';
 })
 export class ProductItemComponent implements OnInit {
   showComponent = false;
-
   @Input() item: ProductList | undefined;
 
   constructor() { }

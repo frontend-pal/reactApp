@@ -9,11 +9,10 @@ export class SearchBoxComponent implements OnInit {
   @Output() searchEmitter = new EventEmitter<string>();
 
   constructor() { }
-
   ngOnInit(): void {
   }
 
-  emitSearch(value: string) {
+  emitSearch(value: string) {    
     if (value && value !== '') {      
       this.searchEmitter.emit(value);
     } else {
