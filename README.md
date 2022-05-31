@@ -2,8 +2,8 @@
 
 Test de Mercado Libre 2022 Joel Alvarez
 
-> Live Angular demo [_here_](https://www.example.com).<br>
-> Live React demo [_here_](https://www.example.com).
+> Live Angular demo [_here_](https://frontend-pal.github.io/angularApp/#/).<br>
+> Live React demo [_here_](https://frontend-pal.github.io/reactApp/).
 
 <br/>
 
@@ -12,7 +12,6 @@ Test de Mercado Libre 2022 Joel Alvarez
 - [General Info](#general-information)
 - [Technologies Used](#technologies-used)
 - [Project Tree](#project-tree)
-- [Add your files](#add-your-files)
 - [Test and Deploy](#test-and-deploy)
 - [Name](#name)
 - [Description](#description)
@@ -33,9 +32,9 @@ Test de Mercado Libre 2022 Joel Alvarez
 
 ## Technologies Used
 
-- Angular XX.X
+- Angular 13.3
 - React XX.X
-- Sass XX.X
+- Sass 1.52.1
 <br/>
 <br/>
 
@@ -54,17 +53,6 @@ Test de Mercado Libre 2022 Joel Alvarez
     └───reactApp
         └───dist
 </pre>
-<br/>
-<br/>
-
-## Add your files
-
-```
-cd existing_repo
-git remote add origin https://gitlab.com/frontend_pal/melitest.git
-git branch -M main
-git push -uf origin main
-```
 <br/>
 <br/>
 
@@ -87,8 +75,16 @@ test de descripcion
 <br/>
 
 ## Installaton
-
-ambientes y versiones pendientes.
+<pre>
+# Angular App
+    # Node 16.13.1
+    # NPM 8.1.2
+</pre>
+<pre>
+# React App
+    # Node 16.13.1
+    # NPM 8.1.2
+</pre>
 <br/>
 <br/>
 
