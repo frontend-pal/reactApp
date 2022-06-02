@@ -40,3 +40,7 @@ body p {
     min-height: calc(100vh - 74px);
   }
 }
+
+/* here the components styles */
+
+@import './components/search-box', './components/home';
