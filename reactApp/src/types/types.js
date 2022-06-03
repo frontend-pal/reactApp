@@ -10,6 +10,9 @@ export const types = {
     hideSpinner: '[Spinner] Hide Spinner',
     showSpinner: '[Spinner] Show Spinner',
 
-    activeItem: '[Items] active item',
-    loadItems: '[Items] load items',
+    activeItem: '[Items] Active item',
+    loadItems: '[Items] Load items',
+
+    setDescription: '[Items] Set Description',
+    removeDescription: '[Items] Remove Descrition'
 }

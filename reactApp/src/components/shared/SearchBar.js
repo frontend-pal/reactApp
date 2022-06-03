@@ -1,12 +1,13 @@
 import PropTypes from 'prop-types';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 import Logo from '../../assets/images/favicon.svg';
 
-const SearchBar = ({formId, handleFunction}) => {
-  
-  const [inputValue, setInputValue] = useState('');
-  
+const SearchBar = ({ formId, handleFunction, defaultInputValue = '' }) => {
+  const [inputValue, setInputValue] = useState(defaultInputValue);
+  const navigate = useNavigate();
+
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
   }
@@ -16,13 +17,21 @@ const SearchBar = ({formId, handleFunction}) => {
     handleFunction(e, inputValue);
   }
 
+  const goHome= () => {
+    navigate('home');
+  }
+
+  useEffect(() => {
+    setInputValue(defaultInputValue);
+  }, [defaultInputValue])
+
   return (
-    <form onSubmit={ handleSubmitEvent } id={ formId }>
-      <span>{ formId }</span>
+    <form onSubmit={handleSubmitEvent} id={formId}>
+      <span>{formId}</span>
       <div className="search-box-container">
         <div className="inner-search-box flex-center ">
 
-          <div className="logo mr-2">
+          <div className="logo mr-2" onClick={goHome}>
             <img src={Logo} alt="search what you want" />
           </div>
           <div className="search-input-container flex-center">

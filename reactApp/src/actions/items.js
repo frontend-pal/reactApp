@@ -1,17 +1,27 @@
-import { getItems } from "../services/ApiMercadolibre";
+import { getItemDetails, getItems } from "../services/ApiMercadolibre";
 import { types } from "../types/types";
 import { setError } from "./errors";
 import { toggleSpinner } from "./spinner";
-
-export const setItems = (items) => ({
-    payload: items,
-    type: types.loadItems
-});
 
 export const activeItem = (id) => ({
     type: types.activeItem,
     payload: id
 })
+
+export const setItemDecription = (productDetails) => ({
+    type: types.setDescription,
+    payload: productDetails
+})
+
+export const removeDescription = () => ({
+    type: types.removeDescription,
+    payload: null
+})
+
+export const setItems = (items) => ({
+    payload: items,
+    type: types.loadItems
+});
 
 export const fetchItems = (query, offset, limit) => {
     return async (dispatch) => {
@@ -32,10 +42,24 @@ export const fetchItems = (query, offset, limit) => {
             }));
             
             dispatch(setItems(dataItems));
-            console.log(paging);
             // dispatch(setPagination());
         } catch ({ message }) {
-            console.log(message);
+            dispatch(setError(message))
+        } finally {
+            dispatch(toggleSpinner(false));
+        }
+    }
+}
+
+export const fetchItemDescription = (id) => {
+    return async (dispatch) => {
+        dispatch(toggleSpinner(true));
+        try {
+            const productDetails = await getItemDetails(id);
+
+            console.log(productDetails);
+            dispatch(setItemDecription(productDetails));
+        } catch ({ message }) {
             dispatch(setError(message))
         } finally {
             dispatch(toggleSpinner(false));

@@ -9,7 +9,7 @@ export const ItemList = ({ formSelector }) => {
   const limit = 4;
   const offset = 0;
   const dispatch = useDispatch();
-  const [searchParams] = useSearchParams();  
+  const [searchParams] = useSearchParams();
 
   const { productList } = useSelector(state => state);
   const dataItems = productList.items;

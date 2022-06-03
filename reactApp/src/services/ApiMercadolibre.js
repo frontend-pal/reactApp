@@ -12,7 +12,7 @@ const siteId = 'MLA';
  * @param {number} limit limite de los resultados de la respuesta
  * @returns un Observable de tipo SearchResponse
  */
-export const getItems = async (search, offset, limit) => {
+export const getItems = async (search, offset = '', limit = '') => {
     const url = `${mainUrl}/sites/${siteId}/search?q=${search}&offset=${offset}&limit=${limit}`;
 
     return await axios.get(url);
@@ -25,8 +25,10 @@ export const getItems = async (search, offset, limit) => {
  * @param itemId id del producto a consultar
  * @returns un Observable con los datos solicitados
  */
-export const getItemDetails = (itemId) => {
+export const getItemDetails = async (itemId) => {
+    const url = `${mainUrl}/items/${itemId}`;
 
+    return await axios.get(url);
 }
 
 

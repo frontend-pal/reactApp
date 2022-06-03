@@ -1,5 +1,5 @@
-import React from 'react'
-import { Routes, Route, Navigate, useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from 'react'
+import { Routes, Route, Navigate, useNavigate, useSearchParams } from "react-router-dom";
 import { Home } from '../components/screens/Home';
 import { NoResults } from '../components/screens/NoResults';
 import SearchBar from '../components/shared/SearchBar';
@@ -12,9 +12,13 @@ import { ProductDescription } from '../components/screens/ProductDescription';
 
 export const AppRouter = (props) => {
     const { loading } = useSelector(state => state.spinner);
+    const [defaultInputValue, setDefaultInputValue] = useState('');
+
     const navigate = useNavigate();
     const searchFormId = 'main-search-box';
     const dispatch = useDispatch();
+    const [searchParams] = useSearchParams();
+    const query = searchParams.get('q') || '';
 
     const handleSubmitEvent = (e, inputValue) => {
         const query = encodeURI(inputValue);
@@ -23,10 +27,16 @@ export const AppRouter = (props) => {
         navigate(`/items?q=${query}`);
     }
 
+    useEffect(() => {
+        console.log(query);
+        setDefaultInputValue(query);
+    }, [query])
+
+
     return (
         <div className={loading ? 'full-layout loading' : 'full-layout'}>
             <div className='router-wrapper'>
-                <SearchBar formId={searchFormId} handleFunction={handleSubmitEvent} />
+                <SearchBar formId={searchFormId} handleFunction={handleSubmitEvent} defaultInputValue={defaultInputValue} />
                 {/* <SearchBar formId='main-search-box2'/>  // for testing purposes only */}
                 <Routes>
                     <Route exact path="/home" element={<Home />} />
