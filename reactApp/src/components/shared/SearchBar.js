@@ -1,9 +1,24 @@
-import React from 'react'
+import PropTypes from 'prop-types';
+import React, { useState } from 'react'
+
 import Logo from '../../assets/images/favicon.svg';
 
-export const SearchBar = () => {
+const SearchBar = ({formId, handleFunction}) => {
+  
+  const [inputValue, setInputValue] = useState('');
+  
+  const handleInputChange = (e) => {
+    setInputValue(e.target.value);
+  }
+
+  const handleSubmitEvent = (e) => {
+    e.preventDefault();
+    handleFunction(e, inputValue);
+  }
+
   return (
-    <>
+    <form onSubmit={ handleSubmitEvent } id={ formId }>
+      <span>{ formId }</span>
       <div className="search-box-container">
         <div className="inner-search-box flex-center ">
 
@@ -11,7 +26,12 @@ export const SearchBar = () => {
             <img src={Logo} alt="search what you want" />
           </div>
           <div className="search-input-container flex-center">
-            <input type="text" className="search-input" />
+            <input
+              type="text"
+              className="search-input"
+              value={inputValue}
+              onChange={handleInputChange}
+            />
             <button className="btn btn-search light-gray">
               <i className="fi fi-search"></i>
             </button>
@@ -19,6 +39,13 @@ export const SearchBar = () => {
         </div>
 
       </div >
-    </>
+    </form>
   )
 }
+
+SearchBar.propTypes = {
+  formId: PropTypes.string,
+  handleFunction: PropTypes.func
+}
+
+export default SearchBar;
