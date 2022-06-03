@@ -9,7 +9,6 @@ export const searchReducer = (state = [], action) => {
       if (currentFormIdx !== -1) {
         const state2 = [...state];
 
-        console.log(state2[currentFormIdx]);
         state2[currentFormIdx].search = action.payload.inputValue
         
         return state2;

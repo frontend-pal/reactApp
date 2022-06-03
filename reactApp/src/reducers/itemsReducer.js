@@ -3,10 +3,11 @@ import { types } from "../types/types";
 const initialState = {
     items: [],
     active: '',
-    description: {
+    details: {
         id: '',
         attributes: [],
-        pictures: []
+        pictures: [],
+        description: ''
     }
 }
 
@@ -29,19 +30,29 @@ export const itemsReducer = (state = initialState, action) => {
                 ]
             }
 
-        case types.setDescription:
+        case types.setDetails:
             return {
                 ...state,
-                description: {
+                active: action.payload.data.id,
+                details: {
                     ...action.payload.data
                 }
             }
 
-        case types.removeDescription:
+        case types.setDescription:            
+            return {
+                ...state,
+                details: {
+                    ...state.details,
+                    description: action.payload.plain_text
+                }              
+            }
+
+        case types.removeDetails:
             return {
                 ...state,
                 active: initialState.active,
-                description: initialState.description
+                details: initialState.details
             }
 
         default:
@@ -49,12 +60,12 @@ export const itemsReducer = (state = initialState, action) => {
     }
 }
 
-// export const setItemDecription = (productDetails) => ({
-//     type: types.setDescription,
+// export const setItemDetails = (productDetails) => ({
+//     type: types.setDetails,
 //     payload: productDetails
 // })
 
-// export const removeDescription = () => ({
-//     type: types.removeDescription,
+// export const removeDetails = () => ({
+//     type: types.removeDetails,
 //     payload: null
 // })

@@ -1,24 +1,33 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
-import { fetchItemDescription } from '../../actions/items';
+import { fetchItemDescription, fetchItemDetails } from '../../actions/items';
 
-export const ProductDescription = () => {
+export const ProductDetail = () => {
     const [count, setCount] = useState(0);
+    const [description, setDescription] = useState('')
     const navigate = useNavigate();
     const { itemId } = useParams();
     const dispatch = useDispatch();
-    const { description: productDetails } = useSelector(state => state.productList);
+    const { details: productDetails } = useSelector(state => state.productList);
     const condition = productDetails.attributes.find(x => x.id === 'ITEM_CONDITION') || { value_name: '' };
     const pictures = productDetails.pictures && productDetails.pictures.length > 0 ? productDetails.pictures : [];
 
     useEffect(() => {
+        dispatch(fetchItemDetails(itemId));
         dispatch(fetchItemDescription(itemId));
     }, [dispatch, itemId])
 
-    useEffect(() => {
-        getPicture();
-    }, []);
+    /**
+     * Este metodo formatea el textopara poder
+     * ser mostrado en un oparrafo de descripcion
+     * @param { string } description texto plano que llega desde el servicio
+    */
+    const createMarkup = (description = '') => {
+        return {
+            __html: description.replace(/(?:\r\n|\r|\n)/g, '<br>')
+        };
+    };
 
     /**
      * Este metodo llama imagenes del arreglo de urls
@@ -47,6 +56,9 @@ export const ProductDescription = () => {
 
     }
 
+    /**
+     * Metodo para ir atras en el historial
+     */
     const handleBackButton = () => {
 
         navigate(-1);
@@ -123,8 +135,7 @@ export const ProductDescription = () => {
                         <div className="product-summary">
                             <div className="summary-container">
                                 <h2 className="summary-title">Descripcion del producto</h2>
-                                <p className="summary-product-description">
-                                    {'test de app'}
+                                <p className="summary-product-description" dangerouslySetInnerHTML={createMarkup(productDetails?.description)}>
                                 </p>
                             </div>
                         </div>

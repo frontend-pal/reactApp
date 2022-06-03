@@ -13,6 +13,8 @@ export const types = {
     activeItem: '[Items] Active item',
     loadItems: '[Items] Load items',
 
-    setDescription: '[Items] Set Description',
-    removeDescription: '[Items] Remove Descrition'
+    setDetails: '[Items] Set Details',
+    removeDetails: '[Items] Remove Details',
+    
+    setDescription: '[Items] Set Description'
 }

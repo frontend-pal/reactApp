@@ -37,6 +37,8 @@ export const getItemDetails = async (itemId) => {
  * @param itemId id del producto a consultar
  * @returns un Observable con los datos solicitados
  */
-export const getItemDescription = (itemId) => {
+export const getItemDescription = async (itemId) => {
+    const url = `${mainUrl}/items/${itemId}/description`;
 
+    return await axios.get(url);
 }
