@@ -4,6 +4,7 @@ import { combineReducers } from "redux";
 
 import { searchReducer } from "../reducers/searchReducer";
 import { spinnerReducer } from '../reducers/spinnerReducer';
+import { itemsReducer } from '../reducers/itemsReducer';
 
 const composeEnhancers =
   typeof window === 'object' &&
@@ -18,7 +19,8 @@ const enhancer = composeEnhancers(
 
 const reducers = combineReducers({
     searchBoxes: searchReducer,
-    spinner: spinnerReducer
+    spinner: spinnerReducer,
+    productList: itemsReducer
 });
 
 

@@ -7,6 +7,9 @@ export const types = {
     setError: '[Errors] Set Error',
     removeError: '[Errors] Remove Error',
 
-    hideSpinner: '[spinner] Hide Spinner',
-    showSpinner: '[spinner] Show Spinner',
+    hideSpinner: '[Spinner] Hide Spinner',
+    showSpinner: '[Spinner] Show Spinner',
+
+    activeItem: '[Items] active item',
+    loadItems: '[Items] load items',
 }
