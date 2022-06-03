@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { ItemList } from '../components/screens/ItemList';
 
 import { search } from "../actions/search";
+import { ProductDescription } from '../components/screens/ProductDescription';
 
 export const AppRouter = (props) => {
     const { loading } = useSelector(state => state.spinner);
@@ -31,7 +32,7 @@ export const AppRouter = (props) => {
                     <Route exact path="/home" element={<Home />} />
                     <Route exact path="/no-content" element={<NoResults />} />
                     <Route exact path="/items" element={<ItemList formSelector={searchFormId} />} />
-                    <Route exact path="/items/:itemId" element={<Home />} />
+                    <Route exact path="/items/:itemId" element={<ProductDescription />} />
                     <Route path="*" element={<Navigate to="/home" replace />} />
                 </Routes>
             </div>

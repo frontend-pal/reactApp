@@ -9,7 +9,7 @@ export const ItemList = ({ formSelector }) => {
   const limit = 4;
   const offset = 0;
   const dispatch = useDispatch();
-  const [searchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();  
 
   const { productList } = useSelector(state => state);
   const dataItems = productList.items;
@@ -18,7 +18,7 @@ export const ItemList = ({ formSelector }) => {
 
   useEffect(() => {
     dispatch(fetchItems(query, offset, limit));
-  }, [dispatch, query])
+  }, [dispatch, query]);
 
   return (
     <div className="full-width">
@@ -43,11 +43,11 @@ export const ItemList = ({ formSelector }) => {
       <div className="container mt-1 ml-1 mr-1 meli-card no-padding">
         {
           dataItems.map((item) => (
-            <ProductItem item={item} />
+            <ProductItem  key={item.id} item={item} />
           ))
         }
       </div>
-      {/* <Pagination /> */}      
+      {/* <Pagination /> */}
     </div>
   )
 }

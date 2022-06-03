@@ -1,11 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 
-export const ProductItem = ({ item }) => {
+export const ProductItem = ({ item }) => {    
+    const navigate = useNavigate();
+
+    const navigateDescription = (id) => {
+        navigate(`/items/${id}`);
+      }
+
     return (
         <div className="product-item">
             <div className="product-section">
-                <img src={item?.thumbnail} alt={item?.title} />
+                <img src={item?.thumbnail} alt={item?.title} onClick={() => navigateDescription(item?.id)}/>
             </div>
             <div className="summary-section">
                 <div className="price-section">
@@ -17,7 +24,7 @@ export const ProductItem = ({ item }) => {
                         <div className="available"></div>
                     </div>
                 </div>
-                <div className="name-section">
+                <div className="name-section" onClick={() => navigateDescription(item?.id)}>
                     <p>
                         {item?.title}
                     </p>
