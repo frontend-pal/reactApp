@@ -7,8 +7,8 @@ import { store } from './store/store';
 
 export const ReactApp = () => {
   return (
-    <Provider store={ store }>
-      <AppRouter />
+    <Provider store={store}>
+          <AppRouter />
     </Provider>
   )
 }
